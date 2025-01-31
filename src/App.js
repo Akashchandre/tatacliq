@@ -14,6 +14,7 @@ import { auth } from './firebase';
 import { setUser } from './redux/slices/authSlice';
 import { setCart } from './redux/slices/cartSlice';
 import { setWishlist } from './redux/slices/wishlistSlice';
+import  Footer  from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -66,7 +67,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
       </Routes>
-      
+      <Footer/>
     </div>
   );
 }
