@@ -43,7 +43,7 @@ const Header = () => {
   const isLoginPage = location.pathname === "/login";
 
   return (
-    <header className="bg-white shadow p-2 flex flex-wrap items-center justify-between">
+    <header className="bg-white shadow p-2 flex flex-wrap items-center justify-between sticky top-0 z-10">
       {/* Logo Always Visible */}
       <div className="flex items-center">
         <Link to="/">

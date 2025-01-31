@@ -4,15 +4,20 @@ import { auth } from '../../firebase';
 import { toast } from 'react-toastify'; 
 import { clearCart } from '../slices/cartSlice'; 
 import { clearWishlist } from '../slices/wishlistSlice'
+
+const storedUser = JSON.parse(localStorage.getItem('user')) || null;
+
 const authSlice = createSlice({                   
   name: 'auth',
-  initialState: { user: null, status: 'idle', error: null },
+  initialState: { user: storedUser, status: 'idle', error: null },
   reducers: {
     setUser(state, action) {             
       state.user = action.payload;
+      localStorage.setItem('user', JSON.stringify(action.payload));
       },
     clearUser(state) {
       state.user = null;
+      localStorage.removeItem('user');
     },
   },
 });
