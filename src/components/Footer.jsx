@@ -1,16 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link , useLocation } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+  const location = useLocation();
+  if (location.pathname === "/login") {
+    return null;
+  }
   return (
-    <footer className="bg-gray-900 text-white py-6 mt-10">
+    <footer className="bg-gray-900 text-white py-6 ">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           
           {/* 🔹 About Section */}
           <div>
-            <h2 className="text-lg font-semibold mb-2">About Tata CLiQ</h2>
+            <h2 className="text-lg font-semibold mb-2 ">About Tata CLiQ</h2>
             <p className="text-sm text-gray-400">
               Your one-stop destination for fashion, electronics, and home essentials.
             </p>

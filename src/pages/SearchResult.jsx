@@ -23,8 +23,8 @@ const SearchResults = () => {
   }, [products, query, category]);
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Search Results</h1>
+    <div className="p-4 min-h-[70vh]">
+      <h1 className="text-2xl font-bold mb-4 text-center">Search Results</h1>
       {filteredProducts.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {filteredProducts.map((product) => (
